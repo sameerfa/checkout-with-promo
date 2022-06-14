@@ -1,6 +1,6 @@
 import { Product } from './product';
 
-interface ICheckout {
+interface CheckoutInterface {
     products: Product[];
     totalPrice: number;
     scan(product: Product): void;
@@ -9,7 +9,7 @@ interface ICheckout {
     clearCart(): void;
 }
 
-export class Checkout implements ICheckout {
+export class Checkout implements CheckoutInterface {
     products: Product[] = [];
     totalPrice: number = 0;
 
