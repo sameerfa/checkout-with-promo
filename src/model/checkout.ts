@@ -6,7 +6,6 @@ interface CheckoutInterface {
     scan(product: Product): void;
     getTotalPrice(): number;
     getCart(): Product[];
-    clearCart(): void;
 }
 
 export class Checkout implements CheckoutInterface {
@@ -32,9 +31,5 @@ export class Checkout implements CheckoutInterface {
 
     getCart() {
         return this.products;
-    }
-
-    clearCart() {
-        this.products = [];
     }
 }

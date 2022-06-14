@@ -22,7 +22,6 @@ describe("Promotion", () => {
         overallPromotion.apply(cart);
         
         expect(checkout.getTotalPrice()).toBe(29.65);
-        checkout.clearCart();
     });
     test("Test 2: 002, 001, 002", () => {
         const currySauce = new Product(1, 1.95);
@@ -41,8 +40,7 @@ describe("Promotion", () => {
         overallPromotion.apply(cart);
         
         expect(checkout.getTotalPrice()).toBe(9.93);
-        checkout.clearCart();
-    });
+     });
     test("Test 3: 002, 001, 002, 003", () => {
         const currySauce = new Product(1, 1.95);
         const pizza = new Product(2, 5.99);
@@ -62,6 +60,5 @@ describe("Promotion", () => {
         overallPromotion.apply(cart);
 
         expect(checkout.getTotalPrice()).toBe(31.44);
-        checkout.clearCart();
     });
 });
