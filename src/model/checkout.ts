@@ -6,6 +6,7 @@ interface ICheckout {
     scan(product: Product): void;
     getTotalPrice(): number;
     getCart(): Product[];
+    clearCart(): void;
 }
 
 export class Checkout implements ICheckout {
@@ -26,10 +27,14 @@ export class Checkout implements ICheckout {
         this.products.forEach(product => {
             this.totalPrice += product.price * product.quantity;
         });
-        return this.totalPrice;
+        return parseFloat(this.totalPrice.toFixed(2));
     }
 
     getCart() {
         return this.products;
+    }
+
+    clearCart() {
+        this.products = [];
     }
 }
